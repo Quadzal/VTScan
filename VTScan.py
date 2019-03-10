@@ -5,7 +5,7 @@ except ImportError:
     os.system("pip3 install requests")
     os.system("cls")
     import requests
-class QuadzalVTScan:
+class VTScan:
     def __init__(self, file = ""):
         self.file = file
         self.API_KEY = "f960e86374a177fa935f52c5063269a6710f5e9f0a1efcd5fb2853f2f3167865"

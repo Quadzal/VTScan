@@ -12,7 +12,7 @@ class VTScan:
         self.resource = ""
         self.DETECTED_TRUE = []
         self.DETECTED_FALSE = []
-        
+
     def fileScan(self, filename = ""):
         files = {'file':  open(filename, 'rb')}
         response = requests.post('https://www.virustotal.com/vtapi/v2/file/scan', files=files, params=self.params)
@@ -51,9 +51,9 @@ class VTScan:
         return malwareCompaines
 
     def MalwareDetect(self):
-        malwareCompaines = self.Report()
-        for company in malwareCompaines:
-            reportDetail = malwareCompaines.get(company)
+        malwareCompanies = self.Report()
+        for company in malwareCompanies:
+            reportDetail = malwareCompanies.get(company)
             if reportDetail.get("detected") == False:
                 self.DETECTED_FALSE.append({"company":company, "detected":"No Malware"})
             else:
